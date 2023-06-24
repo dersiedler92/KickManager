@@ -1,7 +1,10 @@
 package org.example;
 
+import lombok.Data;
+
 import java.util.List;
 
+@Data
 public class Team {
     private String name;
     private String location;
@@ -14,4 +17,5 @@ public class Team {
         this.players = players;
         this.stats = stats;
     }
+
 }
