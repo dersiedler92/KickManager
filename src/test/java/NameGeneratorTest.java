@@ -3,7 +3,7 @@ import org.example.NameGenerator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class NameGeneratorTest {
@@ -40,6 +40,27 @@ public class NameGeneratorTest {
         //assert
         List<String> expectedSurnames = List.of("Müller", "Schmidt", "Schneider");
         Assertions.assertEquals(expectedSurnames.get(0), actualSurnames.get(0));
+    }
+
+    @Test
+    public void randomNameGenerationTest() {
+        //arrange
+        String testNamesPath = "src/test/resources/testNames.csv";
+        String testSurnamesPath = "src/test/resources/testSurnames.txt";
+
+        //act
+        String randomName = nameGenerator.generateRandomName(testNamesPath, testSurnamesPath);
+
+        //assert
+        List<String> expectedRandomNames = new ArrayList<>();
+        List<String> expectedNames = List.of("Aaron", "Aathiran", "Abbas");
+        List<String> expectedSurnames = List.of("Müller", "Schmidt", "Schneider");
+        for (String firstName : expectedNames) {
+            for (String surname : expectedSurnames) {
+                expectedRandomNames.add(firstName + " " + surname);
+            }
+        }
+        Assertions.assertTrue(expectedRandomNames.contains(randomName));
     }
 
 }

@@ -8,17 +8,20 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class NameGenerator {
 
-    public String generateRandomName() {
-        String name = null;
-        List<Name> firstNames = getNames("src/main/resources/names.csv");
-        List<String> lastNames = getSurnames("src/main/resources/surnames.txt");
-        //TODO: Finish
+    public String generateRandomName(String firstNamePath, String surnamePath) {
+        List<Name> firstNames = getNames(firstNamePath);
+        List<String> surnames = getSurnames(surnamePath);
 
+        Random random = new Random();
+        // actually a weighted first name selection would be cooler, but then again, surnames are random, too.
+        String randomFirstName = firstNames.get(random.nextInt(firstNames.size())).getName();
+        String randomSurname = surnames.get(random.nextInt(surnames.size()));
 
-        return name;
+        return randomFirstName + " " + randomSurname;
     }
 
     public List<Name> getNames(String path) {
