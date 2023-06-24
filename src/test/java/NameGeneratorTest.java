@@ -10,7 +10,7 @@ public class NameGeneratorTest {
     private final NameGenerator nameGenerator = new NameGenerator();
 
     @Test
-    public void getNamesTest() throws IOException {
+    public void getNamesTest() {
         //arrange
         String testNamesPath = "src/test/resources/testNames.csv";
 
@@ -27,6 +27,19 @@ public class NameGeneratorTest {
         Assertions.assertEquals(3, actualNames.size());
         Assertions.assertEquals("m", actualNames.get(1).getGender());
         Assertions.assertEquals(13, actualNames.get(0).getAmount());
+    }
+
+    @Test
+    public void getSurnamesTest() {
+        //arrange
+        String testSurnamesPath = "src/test/resources/testSurnames.txt";
+
+        //act
+        List<String> actualSurnames = nameGenerator.getSurnames(testSurnamesPath);
+
+        //assert
+        List<String> expectedSurnames = List.of("Müller", "Schmidt", "Schneider");
+        Assertions.assertEquals(expectedSurnames.get(0), actualSurnames.get(0));
     }
 
 }
