@@ -6,7 +6,7 @@ public class TeamGeneration {
     public List<Team> generateTeams() {
         Team teamBerlin = new Team("Berlin Bears", "Berlin", List.of(), new TeamStats());
         Team teamHamburg = new Team("Hamburger Albatrosse", "Hamburg", List.of(), new TeamStats());
-        Team teamMuenchen = new Team("Münchner Alpenkicker", "München", List.of(), new TeamStats());
+        Team teamMuenchen = new Team("Münchner Bierkicker", "München", List.of(), new TeamStats());
         Team teamKoeln = new Team("Karneval Köln", "Köln", List.of(), new TeamStats());
         Team teamFrankfurt = new Team("Euroballers FFM", "Frankfurt am Main", List.of(), new TeamStats());
         Team teamStuttgart = new Team("Schwabenpower Stuttgart", "Stuttgart", List.of(), new TeamStats());
