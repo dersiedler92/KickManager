@@ -1,5 +1,5 @@
-import org.example.Name;
-import org.example.NameGenerator;
+import org.example.player.Name;
+import org.example.player.NameGenerator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

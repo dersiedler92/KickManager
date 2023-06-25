@@ -1,6 +1,7 @@
-package org.example;
+package org.example.team;
 
 import lombok.Data;
+import org.example.player.Player;
 
 import java.util.List;
 
