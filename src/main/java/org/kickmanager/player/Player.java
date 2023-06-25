@@ -1,7 +1,7 @@
-package org.example.player;
+package org.kickmanager.player;
 
 import lombok.Data;
-import org.example.Nationality;
+import org.kickmanager.Nationality;
 
 import java.time.LocalDate;
 

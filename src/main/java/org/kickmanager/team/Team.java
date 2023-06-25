@@ -1,7 +1,7 @@
-package org.example.team;
+package org.kickmanager.team;
 
 import lombok.Data;
-import org.example.player.Player;
+import org.kickmanager.player.Player;
 
 import java.util.List;
 

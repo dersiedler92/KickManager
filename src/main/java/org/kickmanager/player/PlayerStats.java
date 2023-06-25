@@ -1,4 +1,4 @@
-package org.example.player;
+package org.kickmanager.player;
 import lombok.Data;
 
 import java.util.Random;
@@ -23,10 +23,11 @@ public class PlayerStats {
     private int intelligence; // MID
     private int aggressiveness; // DEF
     private int reaction; // GK, OFF
+    private double averageRating;
 
     public PlayerStats(int tackle, int speed, int stamina, int heading, int shooting, int blocking, int technique,
                        int physique, int anticipation, int magic, int coolness, int ballHandling, int passing,
-                       int crossing, int intelligence, int aggressiveness, int reaction) {
+                       int crossing, int intelligence, int aggressiveness, int reaction, Position position) {
         this.tackle = tackle;
         this.speed = speed;
         this.stamina = stamina;
@@ -44,10 +45,32 @@ public class PlayerStats {
         this.intelligence = intelligence;
         this.aggressiveness = aggressiveness;
         this.reaction = reaction;
+        createAverageRating(position);
     }
 
     public PlayerStats() {
+    }
 
+    public void createAverageRating(Position position) {
+        switch (position.getArea()) {
+            case DEFENSE -> {
+                this.averageRating = (this.tackle + this.heading + this.blocking + this.physique + this.anticipation
+                        + this.coolness + this.passing + this.intelligence + this.aggressiveness) / 9.0;
+                this.averageRating = Math.round(this.averageRating * 10) / 10.0;
+            }
+            case MIDFIELD -> {
+                this.averageRating = (this.speed + this.stamina + this.shooting + this.technique
+                        + this.magic + this.coolness + this.ballHandling + this.passing + this.crossing
+                        + this.intelligence) / 10.0;
+                this.averageRating = Math.round(this.averageRating * 10) / 10.0;
+            }
+            case OFFENSE -> {
+                this.averageRating = (this.tackle + this.heading + this.speed + this.shooting + this.technique
+                        + this.physique + this.anticipation + this.magic + this.coolness + this.intelligence
+                        + this.aggressiveness + this.reaction) / 12.0;
+                this.averageRating = Math.round(this.averageRating * 10) / 10.0;
+            }
+        }
     }
 
     public void statGeneration(Position position) {
@@ -71,6 +94,7 @@ public class PlayerStats {
                 this.intelligence = random.nextInt(1, 15);
                 this.aggressiveness = random.nextInt(5, 15);
                 this.reaction = random.nextInt(1, 10);
+                createAverageRating(position);
             }
             case MIDFIELD -> {
                 this.tackle = random.nextInt(3, 10);
@@ -90,9 +114,10 @@ public class PlayerStats {
                 this.intelligence = random.nextInt(1, 15);
                 this.aggressiveness = random.nextInt(1, 10);
                 this.reaction = random.nextInt(1, 10);
+                createAverageRating(position);
             }
             case OFFENSE -> {
-                this.tackle = random.nextInt(1, 8);
+                this.tackle = random.nextInt(1, 12);
                 this.speed = random.nextInt(5, 15);
                 this.stamina = random.nextInt(3, 12);
                 this.heading = random.nextInt(5, 15);
@@ -109,6 +134,7 @@ public class PlayerStats {
                 this.intelligence = random.nextInt(1, 15);
                 this.aggressiveness = random.nextInt(3, 12);
                 this.reaction = random.nextInt(3, 15);
+                createAverageRating(position);
             }
         }
     }

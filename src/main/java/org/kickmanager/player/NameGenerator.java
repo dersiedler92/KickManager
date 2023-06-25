@@ -1,4 +1,4 @@
-package org.example.player;
+package org.kickmanager.player;
 
 import java.io.BufferedReader;
 import java.io.IOException;

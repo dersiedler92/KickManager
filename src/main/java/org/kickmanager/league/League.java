@@ -1,22 +1,11 @@
-package org.example.league;
+package org.kickmanager.league;
 
-import org.example.Nationality;
-import org.example.team.Team;
+import org.kickmanager.Nationality;
+import org.kickmanager.team.Team;
 
 import java.util.List;
 
 public class League {
-    public int getTier() {
-        return tier;
-    }
-
-    public Nationality getNation() {
-        return nation;
-    }
-
-    public List<Team> getTeams() {
-        return teams;
-    }
 
     private final int tier;
     private final Nationality nation;
@@ -30,6 +19,18 @@ public class League {
 
     public void setTeams(List<Team> teams) {
         this.teams = teams;
+    }
+
+    public int getTier() {
+        return tier;
+    }
+
+    public Nationality getNation() {
+        return nation;
+    }
+
+    public List<Team> getTeams() {
+        return teams;
     }
 
 }

@@ -1,10 +1,9 @@
-package org.example;
+package org.kickmanager;
 
-import org.example.league.League;
-import org.example.player.PlayerGeneration;
-import org.example.team.Team;
-import org.example.team.TeamGeneration;
-import org.example.team.TeamStats;
+import org.kickmanager.league.League;
+import org.kickmanager.player.PlayerGeneration;
+import org.kickmanager.team.Team;
+import org.kickmanager.team.TeamGeneration;
 
 import java.util.List;
 

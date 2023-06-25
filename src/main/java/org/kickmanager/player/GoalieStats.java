@@ -1,4 +1,4 @@
-package org.example.player;
+package org.kickmanager.player;
 import lombok.Data;
 
 import java.util.Random;
@@ -14,6 +14,7 @@ public class GoalieStats {
     private int reaction;
     private int catching;
     private int throwing;
+    private double averageRating;
 
     public GoalieStats() {
     }
@@ -29,6 +30,12 @@ public class GoalieStats {
         this.throwing = throwing;
     }
 
+    public void createAverageRating() {
+        this.averageRating = (this.speed + this.blocking + this.anticipation + this.coolness + this.intelligence
+                + this.reaction + this.catching + this.throwing) / 8.0;
+        this.averageRating = Math.round(this.averageRating * 10) / 10.0;
+    }
+
     public void statGeneration() {
         Random random = new Random();
         this.speed = random.nextInt(3, 12);
@@ -39,5 +46,6 @@ public class GoalieStats {
         this.reaction = random.nextInt(5, 15);
         this.catching = random.nextInt(3, 15);
         this.throwing = random.nextInt(5, 15);
+        createAverageRating();
     }
 }

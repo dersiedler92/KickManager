@@ -1,7 +1,7 @@
-package org.example.player;
+package org.kickmanager.player;
 
-import org.example.Nationality;
-import org.example.team.Team;
+import org.kickmanager.Nationality;
+import org.kickmanager.team.Team;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -64,10 +64,12 @@ public class PlayerGeneration {
                 System.out.println("Gewicht: " + player.getWeight() + " kg");
                 System.out.println("Position: " + player.getPosition().getAbbreviation());
                 if (player.getPlayerStats() != null) {
-                    System.out.println("Stats: " + player.getPlayerStats() + "\n");
+                    System.out.println("Stats: " + player.getPlayerStats());
+                    System.out.println("Durchschnittswertung: " + player.getPlayerStats().getAverageRating() + "\n");
                 }
                 else {
-                    System.out.println("Stats: " + player.getGoalieStats() + "\n");
+                    System.out.println("Stats: " + player.getGoalieStats());
+                    System.out.println("Durchschnittswertung: " + player.getGoalieStats().getAverageRating() + "\n");
                 }
             }
             team.setPlayers(randomPlayers);
@@ -81,8 +83,8 @@ public class PlayerGeneration {
                 Position.CENTER_BACK,
                 Position.CENTER_BACK,
                 Position.CENTER_BACK,
-                Position.STRIKER,
                 Position.DEFENSIVE_MIDFIELDER,
+                Position.STRIKER,
                 Position.DEFENSIVE_ALLROUNDER,
                 Position.STRIKER,
                 Position.CENTRAL_MIDFIELDER,

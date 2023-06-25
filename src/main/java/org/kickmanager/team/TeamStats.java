@@ -1,4 +1,4 @@
-package org.example.team;
+package org.kickmanager.team;
 import lombok.Data;
 
 import java.util.Random;

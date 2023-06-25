@@ -1,6 +1,4 @@
-package org.example.player;
-
-import java.util.List;
+package org.kickmanager.player;
 
 public enum Position {
     GOALKEEPER("GK", Area.GOAL),

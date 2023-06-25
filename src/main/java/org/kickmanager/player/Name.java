@@ -1,4 +1,4 @@
-package org.example.player;
+package org.kickmanager.player;
 
 import lombok.Data;
 
