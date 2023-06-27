@@ -30,4 +30,6 @@ public class Player {
         this.jerseyNumber = jerseyNumber;
     }
 
+    public Player() {}
+
 }
