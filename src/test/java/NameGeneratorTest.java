@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NameGeneratorMain {
+public class NameGeneratorTest {
     private final NameGenerator nameGenerator = new NameGenerator();
 
     @Test

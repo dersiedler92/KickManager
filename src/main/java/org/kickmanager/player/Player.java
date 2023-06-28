@@ -16,9 +16,11 @@ public class Player {
     private GoalieStats goalieStats;
     private Position position;
     private int jerseyNumber;
+    private String teamBelonging;
 
     public Player(String name, LocalDate birthDate, double height, double weight, Nationality nationality,
-                  PlayerStats playerStats, GoalieStats goalieStats, Position position, int jerseyNumber) {
+                  PlayerStats playerStats, GoalieStats goalieStats, Position position, int jerseyNumber,
+                  String teamBelonging) {
         this.name = name;
         this.birthDate = birthDate;
         this.height = height;
@@ -28,6 +30,7 @@ public class Player {
         this.goalieStats = goalieStats;
         this.position = position;
         this.jerseyNumber = jerseyNumber;
+        this.teamBelonging = teamBelonging;
     }
 
     public Player() {}

@@ -38,7 +38,7 @@ public class PlayerGeneration {
 
                 randomPlayers.add(new Player(
                         randomName, randomBirthDate, randomHeight, randomWeight, Nationality.GERMAN, null,
-                        null, null, 0
+                        null, null, 0, team.getName()
                 ));
             }
             randomPlayers.sort(Comparator.comparing(Player::getHeight).reversed());
